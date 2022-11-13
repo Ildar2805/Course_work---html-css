@@ -41,8 +41,7 @@ ul , li {
 /*Container*/
 .container {
     box-sizing: border-box;
-    width: 72.3%;
-    height: 100%;
+    width: 1200px;
     padding: 0 15px;
     margin: 0 auto;
 }
@@ -116,7 +115,6 @@ ul , li {
     position: relative;
     z-index: 0;
     width: 100%;
-    height: 450px;
     margin: 0 auto;
     background-color: #666666;
     background-image: url("../img/banner-bg.jpg");
@@ -141,28 +139,35 @@ ul , li {
     display: flex;
     justify-content: space-between;
 }
+
 .top-logo {
-    width: 15.4%;
     margin-top: 30px;
+}
+
+.top-logo-image {
+    width: 180px;
 }
 
 .top-menu {
     margin-top: 40px;
+}
+
+.top-menu-list {
+    display: flex;
+}
+
+.top-menu-list li:nth-child(n+2){
+    margin-left: 31px;
+}
+
+.top-menu-link {
+    position: relative;
     font-size: 13px;
     text-transform: uppercase; 
     color: #fff; 
 }
 
-.top-link {
-    position: relative;
-    color: inherit;
-}
-
-.top-link:nth-child(n+2) {
-    margin-left: 31px;
-}
-
-.top-link::after {
+.top-menu-link::after {
     content: "";
     position: absolute;
     top: 92%;
@@ -174,11 +179,11 @@ ul , li {
     background-color: #fff;
 }
 
-.top-link:hover::after {
+.top-menu-link:hover::after {
     display: block;
 }
 
-.top-icon {
+.top-menu-item:last-child {
     display: none;
 }
 
@@ -269,7 +274,7 @@ ul , li {
 .trend-category::after {
     content: "";
     position: absolute;
-    top: 70%;
+    top: 75%;
     left: 0;
     z-index: 0;
     display: none;
@@ -328,8 +333,7 @@ ul , li {
 
 .post-preview {
     position: relative;
-    width: 50%;
-    max-width: 100%;
+    width: 380px;
     height: 295px;
     background-color: #eff6f1;
 }
@@ -450,8 +454,7 @@ ul , li {
 
 .last-post-preview {
     position: relative;
-    width: 26%;
-    max-width: 70px;
+    width: 70px;
     height: 70px;
     background-color: #eff6f1;
 }
@@ -565,6 +568,7 @@ ul , li {
     padding: 15px 30px;
     font-size: 14px;
     font-weight: bold;
+    text-transform: uppercase;
     border: none;
     color: #fff;
     background-color: #b59f5b;
@@ -658,6 +662,8 @@ ul , li {
 .item {
     position: relative;
     width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
     border: 3px solid rgba(181, 159, 91, 0.6);
 }
 
@@ -668,10 +674,10 @@ ul , li {
 .item-preview {
     position: absolute;
     top: -175px;
-    left: 20px;
     z-index: -1;
-    width: 88%;
-    height: 204px;
+    width: 300px;
+    height: 205px;
+    margin: 0 auto;
     background-color: #eff6f1;
 }
 
@@ -689,7 +695,7 @@ ul , li {
 
 .item-content {
     box-sizing: border-box;
-    padding: 49px 20px 25px 17px;
+    padding: 49px 0 25px 0;
 }
 
 .item-description {
@@ -802,11 +808,14 @@ ul , li {
     color: #999999;
 }
 
+.copyrights a {
+    color: inherit;
+}
+
 
 /*Popup*/
 
-.popup-hidden {
-    position: fixed;
+.popup-toogle__hidden {
     transform: scale(0);
 }
 
@@ -979,6 +988,7 @@ ul , li {
     .container-welcome {
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
 
     /*Section*/
@@ -1018,8 +1028,8 @@ ul , li {
     /*Welcome*/
 
     .welcome {
-        height: 640px;
         background-image: url("../img/banner-mobile.jpg");
+        background-position: bottom;
         background-size: cover;
     }
     
@@ -1029,15 +1039,26 @@ ul , li {
     }
 
     .top-logo {
-        width: 100%;
         padding: 0 30px;
     }
 
-    .top-link {
+    .top-logo-image {
+        width: 270px;
+    }
+
+    .top-menu {
+        width: 0;
+    }
+
+    .top-menu-item {
         display: none;
     }
 
-   .top-icon {
+    .top-menu-item:last-child {
+        display: block;
+    }
+
+   .top-menu-icon {
         position: absolute;
         top: 40px;
         right: 15px;
@@ -1048,7 +1069,7 @@ ul , li {
         background: #fff;
     }
 
-    .top-icon::after {
+    .top-menu-icon::after {
         content: "";
         position: absolute;
         bottom: 8px;
@@ -1058,7 +1079,7 @@ ul , li {
         background: #fff;        
     }
     
-    .top-icon::before {
+    .top-menu-icon::before {
         content: "";
         position: absolute;
         top: 8px;
@@ -1069,14 +1090,11 @@ ul , li {
     }
 
     .intro {
-        margin-top: 20px;
-        margin-bottom: auto;
-        padding-top: 15px;
+        width: 88%;
     }
 
     .intro-title {
-        padding: 0 15px;
-        margin-bottom: auto;
+        padding-top: 40px;
         font-size: 26px;
         line-height: 36px;
         
@@ -1134,8 +1152,8 @@ ul , li {
     
     
     .post-preview {
-        width: 100%;
-        height: 255px;
+        width: 330px;
+        height: 253px;
         margin: 0 auto;
     }
 
@@ -1318,26 +1336,31 @@ ul , li {
     /*Welcome*/
 
     .welcome {
-        height: 390px;
         background-image: url("../img/banner-bg-tablet.jpg");
-        background-position: left;
+        background-position: left bottom;
     }
 
     .top-logo {
-        width: 22.4%;
         margin-top: 43px;
     }
 
-    
+    .top-logo-image {
+        width: 160px;
+    }
+
     .top-menu {
         margin-top: 35px;
     }
 
-    .top-link {
+    .top-menu-item {
         display: none;
     }
 
-    .top-icon {
+    .top-menu-item:last-child {
+        display: block;
+    }
+
+    .top-menu-icon {
         position: absolute;
         top: 61px;
         right: 37px;
@@ -1348,7 +1371,7 @@ ul , li {
         background: #fff;
     }
 
-    .top-icon::after {
+    .top-menu-icon::after {
         content: "";
         position: absolute;
         bottom: 8px;
@@ -1358,7 +1381,7 @@ ul , li {
         background: #fff;        
     }
     
-    .top-icon::before {
+    .top-menu-icon::before {
         content: "";
         position: absolute;
         top: 8px;
@@ -1370,6 +1393,7 @@ ul , li {
 
     .intro {
         width: 88%;
+        max-width: 610px;
     }
 
     .intro-title {
@@ -1429,12 +1453,12 @@ ul , li {
     }
 
     .post-preview {
-        width: 100%;
+        width: 392px;
         height: 302px;
     }
 
     .post-content {
-        width: 100%;
+        width: 392px;
         margin-top: 15px;
         padding-left: 0;
         padding-bottom: 18px;
@@ -1501,6 +1525,7 @@ ul , li {
         top: -196px;
         height: 227px;
         width: 87%;
+        max-width: 292px;
     }
 
     .item-img-tablet {
