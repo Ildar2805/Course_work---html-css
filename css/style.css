@@ -1551,6 +1551,7 @@ ul , li {
         width: 50%;
         height: 60vh;
     }
+}
 
 @media (min-width: 641px) and (max-width: 1200px) and (orientation: landscape) {
     
@@ -1569,5 +1570,34 @@ ul , li {
 
     .trend-post:nth-child(n+2) {
         margin-left: 3px;
+    }
+
+    .trend-post-content {
+        left: 6.8%;
+        right: 6.8%;
+        bottom: 5.4%;
+        padding: 9% 9%;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 880px) and (orientation: landscape) {
+    
+    .trend-category {
+        font-size: 12px;
+    }
+
+    .trend-title {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 770px) and (orientation: landscape) {
+    
+    .trend-category {
+        font-size: 10px;
+    }
+    
+    .trend-title {
+        font-size: 13px;
     }
 }
